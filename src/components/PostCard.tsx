@@ -55,8 +55,6 @@ export default function PostCard({ post }: PostCardProps) {
           <span>{post.readingTime} min read</span>
           <span>&middot;</span>
           <time>{new Date(post.date).toLocaleDateString("en-US", { year: "numeric", month: "short", day: "numeric" })}</time>
-          <span>&middot;</span>
-          <span>Danny Nelson</span>
         </div>
         <h2 className={`mb-2 text-lg font-semibold text-gray-900 transition-colors ${
           post.comingSoon
