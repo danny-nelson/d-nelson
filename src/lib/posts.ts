@@ -25,7 +25,7 @@ export interface PostMeta {
   comingSoon?: boolean;
 }
 
-const postsDirectory = path.join(process.cwd(), "posts");
+const postsDirectory = path.join(process.cwd(), "blogs");
 
 export function getAllPostSlugs(): string[] {
   if (!fs.existsSync(postsDirectory)) return [];
