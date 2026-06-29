@@ -9,10 +9,16 @@ export default function Navbar() {
         </Link>
         <div className="flex items-center gap-5">
           <Link
-            href="/"
+            href="/blog"
             className="text-sm font-medium text-gray-600 transition-colors hover:text-gray-900"
           >
             Blog
+          </Link>
+          <Link
+            href="/projects"
+            className="text-sm font-medium text-gray-600 transition-colors hover:text-gray-900"
+          >
+            Projects
           </Link>
           <Link
             href="/about"
