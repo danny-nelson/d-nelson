@@ -51,7 +51,9 @@ export default function PostCard({ post }: PostCardProps) {
             <span>&middot;</span>
             <span>Danny Nelson</span>
           </div>
-          <h2 className="mb-2 text-lg font-semibold text-gray-900 group-hover:text-blue-700 transition-colors">
+          <h2 className={`mb-2 text-lg font-semibold text-gray-900 transition-colors ${
+            post.category === "Blog" ? "group-hover:text-blue-700" : "group-hover:text-emerald-700"
+          }`}>
             {post.title}
           </h2>
           <p className="text-sm leading-relaxed text-gray-600 line-clamp-3">{post.excerpt}</p>
