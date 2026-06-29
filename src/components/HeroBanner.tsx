@@ -7,7 +7,7 @@ interface HeroBannerProps {
 
 export default function HeroBanner({ src, alt }: HeroBannerProps) {
   return (
-    <div className="relative aspect-[21/9] w-full overflow-hidden rounded-xl bg-gray-100">
+    <div className="relative aspect-[16/10] w-full overflow-hidden rounded-xl bg-gray-100">
       {src ? (
         <Image src={src} alt={alt} fill className="object-cover" priority />
       ) : (
