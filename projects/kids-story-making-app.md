@@ -3,6 +3,7 @@ title: "Kids Story Making App"
 date: "2026-06-29"
 excerpt: "An interactive app that helps kids create their own stories with fun characters, settings, and plot twists."
 heroImage: "/images/hero-kids-story-app.png"
+comingSoon: true
 ---
 
 A creative app designed to spark children's imaginations by guiding them through the story-making process.

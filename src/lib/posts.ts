@@ -22,6 +22,7 @@ export interface PostMeta {
   excerpt: string;
   heroImage: string;
   readingTime: number;
+  comingSoon?: boolean;
 }
 
 const postsDirectory = path.join(process.cwd(), "posts");
@@ -48,6 +49,7 @@ export function getAllPostsMeta(): PostMeta[] {
         excerpt: data.excerpt || "",
         heroImage: data.heroImage || "",
         readingTime: calculateReadingTime(content),
+        comingSoon: data.comingSoon || false,
       };
     })
     .sort((a, b) => (a.date > b.date ? -1 : 1));

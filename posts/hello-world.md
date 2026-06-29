@@ -3,6 +3,7 @@ title: "Hello World"
 date: "2026-06-26"
 excerpt: "Welcome to my blog. This is my first post where I introduce myself and share what I'll be writing about."
 heroImage: "/images/hero-hello-world.jpg"
+comingSoon: true
 ---
 
 Welcome to my blog! I'm Danny Nelson, and this is where I'll be sharing my thoughts, projects, and ideas.

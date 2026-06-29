@@ -12,6 +12,7 @@ export interface ProjectMeta {
   excerpt: string;
   heroImage: string;
   readingTime: number;
+  comingSoon?: boolean;
 }
 
 export interface Project extends ProjectMeta {
@@ -42,6 +43,7 @@ export function getAllProjectsMeta(): ProjectMeta[] {
         excerpt: data.excerpt || "",
         heroImage: data.heroImage || "",
         readingTime: calculateReadingTime(content),
+        comingSoon: data.comingSoon || false,
       };
     })
     .sort((a, b) => (a.date > b.date ? -1 : 1));
