@@ -11,16 +11,15 @@ export default function Navbar() {
 
   const links = [
     { href: "/blog", label: "Blog" },
-    { href: "/projects", label: "Projects" },
     { href: "/about", label: "About" },
   ];
 
   return (
-    <header className="border-b border-gray-200">
+    <header className="border-b border-gray-200 dark:border-gray-800">
       <nav className="mx-auto flex max-w-5xl flex-wrap items-center justify-between px-6 py-5">
         <Link
           href="/"
-          className="flex items-center gap-3 text-xl font-semibold tracking-tight text-gray-900"
+          className="flex items-center gap-3 text-xl font-semibold tracking-tight text-gray-900 dark:text-gray-100"
           onClick={() => setOpen(false)}
         >
           <Image
@@ -39,8 +38,8 @@ export default function Navbar() {
             <Link
               key={link.href}
               href={link.href}
-              className={`text-sm font-medium transition-colors hover:text-gray-900 ${
-                pathname.startsWith(link.href) ? "text-gray-900" : "text-gray-600"
+              className={`text-sm font-medium transition-colors hover:text-gray-900 dark:hover:text-gray-100 ${
+                pathname.startsWith(link.href) ? "text-gray-900 dark:text-gray-100" : "text-gray-600 dark:text-gray-400"
               }`}
             >
               {link.label}
@@ -50,7 +49,7 @@ export default function Navbar() {
             href="https://www.linkedin.com/in/danny-nelson86/"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-gray-500 transition-colors hover:text-gray-900"
+            className="text-gray-500 transition-colors hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-100"
             aria-label="LinkedIn"
           >
             <svg className="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
@@ -62,7 +61,7 @@ export default function Navbar() {
         {/* Burger button */}
         <button
           type="button"
-          className="md:hidden rounded-md p-2 text-gray-600 hover:bg-gray-100 hover:text-gray-900"
+          className="md:hidden rounded-md p-2 text-gray-600 hover:bg-gray-100 hover:text-gray-900 dark:text-gray-400 dark:hover:bg-gray-800 dark:hover:text-gray-100"
           onClick={() => setOpen(!open)}
           aria-label={open ? "Close menu" : "Open menu"}
           aria-expanded={open}
@@ -80,13 +79,13 @@ export default function Navbar() {
 
         {/* Mobile menu */}
         {open && (
-          <div className="mt-4 flex w-full flex-col items-end gap-3 border-t border-gray-100 pt-4 md:hidden">
+          <div className="mt-4 flex w-full flex-col items-end gap-3 border-t border-gray-100 pt-4 md:hidden dark:border-gray-800">
             {links.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
-                className={`rounded-md px-3 py-2 text-sm font-medium transition-colors hover:bg-gray-50 hover:text-gray-900 ${
-                  pathname.startsWith(link.href) ? "bg-gray-50 text-gray-900" : "text-gray-600"
+                className={`rounded-md px-3 py-2 text-sm font-medium transition-colors hover:bg-gray-50 hover:text-gray-900 dark:hover:bg-gray-800 dark:hover:text-gray-100 ${
+                  pathname.startsWith(link.href) ? "bg-gray-50 text-gray-900 dark:bg-gray-800 dark:text-gray-100" : "text-gray-600 dark:text-gray-400"
                 }`}
                 onClick={() => setOpen(false)}
               >
@@ -97,7 +96,7 @@ export default function Navbar() {
               href="https://www.linkedin.com/in/danny-nelson86/"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-2 rounded-md px-3 py-2 text-sm font-medium text-gray-600 transition-colors hover:bg-gray-50 hover:text-gray-900"
+              className="flex items-center gap-2 rounded-md px-3 py-2 text-sm font-medium text-gray-600 transition-colors hover:bg-gray-50 hover:text-gray-900 dark:text-gray-400 dark:hover:bg-gray-800 dark:hover:text-gray-100"
               onClick={() => setOpen(false)}
             >
               <svg className="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">

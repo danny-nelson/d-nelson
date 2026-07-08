@@ -33,7 +33,7 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
           <HeroBanner src={post.heroImage} alt={post.title} />
 
           <div className="mt-8">
-            <div className="mb-4 flex items-center gap-2 text-sm text-gray-500">
+            <div className="mb-4 flex items-center gap-2 text-sm text-gray-500 dark:text-gray-400">
               <time>
                 {new Date(post.date).toLocaleDateString("en-US", {
                   year: "numeric",
@@ -45,13 +45,13 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
               <span>{post.readingTime} min read</span>
             </div>
 
-            <h1 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+            <h1 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl dark:text-gray-100">
               {post.title}
             </h1>
           </div>
 
           <div
-            className="prose prose-gray mt-8 max-w-none prose-headings:font-semibold prose-a:text-blue-700"
+            className="prose prose-gray dark:prose-invert mt-8 max-w-none prose-headings:font-semibold prose-a:text-blue-700 dark:prose-a:text-blue-400"
             dangerouslySetInnerHTML={{ __html: post.contentHtml }}
           />
 
