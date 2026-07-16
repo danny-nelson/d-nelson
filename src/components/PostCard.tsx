@@ -43,9 +43,15 @@ export default function PostCard({ post }: PostCardProps) {
       </div>
       <div className="flex flex-1 flex-col p-5">
         <div className="mb-3 flex flex-wrap items-center gap-x-2 gap-y-1 text-xs text-gray-500 dark:text-gray-400">
-          <span>{post.readingTime} min read</span>
-          <span>&middot;</span>
-          <time>{new Date(post.date).toLocaleDateString("en-US", { year: "numeric", month: "short", day: "numeric" })}</time>
+          {post.comingSoon ? (
+            <span>Coming soon</span>
+          ) : (
+            <>
+              <span>{post.readingTime} min read</span>
+              <span>&middot;</span>
+              <time>{new Date(post.date).toLocaleDateString("en-US", { year: "numeric", month: "short", day: "numeric" })}</time>
+            </>
+          )}
         </div>
         <h2 className={`mb-2 text-lg font-semibold text-gray-900 transition-colors dark:text-gray-100 ${
           post.comingSoon ? "" : "group-hover:text-blue-700 dark:group-hover:text-blue-400"
