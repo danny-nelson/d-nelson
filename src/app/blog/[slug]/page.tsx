@@ -3,6 +3,8 @@ import HeroBanner from "@/components/HeroBanner";
 import PostSidebar from "@/components/PostSidebar";
 import CommentSection from "@/components/CommentSection";
 
+const COMMENTS_ENABLED = false;
+
 export function generateStaticParams() {
   return getAllPostSlugs().map((slug) => ({ slug }));
 }
@@ -79,7 +81,9 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
             />
           )}
 
-          <CommentSection postSlug={slug} supabaseEdgeFunctionUrl={edgeFunctionUrl} supabaseAnonKey={anonKey} />
+          {COMMENTS_ENABLED && (
+            <CommentSection postSlug={slug} supabaseEdgeFunctionUrl={edgeFunctionUrl} supabaseAnonKey={anonKey} />
+          )}
         </article>
 
         <div className="mt-10 lg:mt-0">
