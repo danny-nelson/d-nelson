@@ -14,6 +14,7 @@ export interface Post {
   heroImage: string;
   readingTime: number;
   contentHtml: string;
+  comingSoon?: boolean;
 }
 
 export interface PostMeta {
@@ -70,5 +71,6 @@ export async function getPostBySlug(slug: string): Promise<Post> {
     heroImage: data.heroImage || "",
     readingTime: calculateReadingTime(content),
     contentHtml: processed.toString(),
+    comingSoon: data.comingSoon || false,
   };
 }

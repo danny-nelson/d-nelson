@@ -25,7 +25,7 @@ export default function PostSidebar({ posts, currentSlug }: PostSidebarProps) {
             >
               <span className="truncate pr-3">{post.title}</span>
               <span className="shrink-0 text-xs text-gray-400 dark:text-gray-500">
-                {post.readingTime}m
+                {post.comingSoon ? "SOON" : `${post.readingTime}m`}
               </span>
             </Link>
           </li>

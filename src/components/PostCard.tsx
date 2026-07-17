@@ -53,19 +53,13 @@ export default function PostCard({ post }: PostCardProps) {
             </>
           )}
         </div>
-        <h2 className={`mb-2 text-lg font-semibold text-gray-900 transition-colors dark:text-gray-100 ${
-          post.comingSoon ? "" : "group-hover:text-blue-700 dark:group-hover:text-blue-400"
-        }`}>
+        <h2 className="mb-2 text-lg font-semibold text-gray-900 transition-colors group-hover:text-blue-700 dark:text-gray-100 dark:group-hover:text-blue-400">
           {post.title}
         </h2>
         <p className="text-sm leading-relaxed text-gray-600 line-clamp-3 dark:text-gray-400">{post.excerpt}</p>
       </div>
     </article>
   );
-
-  if (post.comingSoon) {
-    return <div className="block h-full cursor-default">{card}</div>;
-  }
 
   return (
     <Link href={href} className="group block h-full">

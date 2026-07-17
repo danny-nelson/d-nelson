@@ -48,15 +48,21 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
 
           <div className="mt-8">
             <div className="mb-4 flex items-center gap-2 text-sm text-gray-500 dark:text-gray-400">
-              <time>
-                {new Date(post.date).toLocaleDateString("en-US", {
-                  year: "numeric",
-                  month: "long",
-                  day: "numeric",
-                })}
-              </time>
-              <span>&middot;</span>
-              <span>{post.readingTime} min read</span>
+              {post.comingSoon ? (
+                <span>Coming soon</span>
+              ) : (
+                <>
+                  <time>
+                    {new Date(post.date).toLocaleDateString("en-US", {
+                      year: "numeric",
+                      month: "long",
+                      day: "numeric",
+                    })}
+                  </time>
+                  <span>&middot;</span>
+                  <span>{post.readingTime} min read</span>
+                </>
+              )}
             </div>
 
             <h1 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl dark:text-gray-100">
@@ -64,10 +70,14 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
             </h1>
           </div>
 
-          <div
-            className="prose prose-gray dark:prose-invert mt-8 max-w-none prose-headings:font-semibold prose-a:text-blue-700 dark:prose-a:text-blue-400"
-            dangerouslySetInnerHTML={{ __html: post.contentHtml }}
-          />
+          {post.comingSoon ? (
+            <p className="mt-8 text-lg leading-relaxed text-gray-600 dark:text-gray-400">{post.excerpt}</p>
+          ) : (
+            <div
+              className="prose prose-gray dark:prose-invert mt-8 max-w-none prose-headings:font-semibold prose-a:text-blue-700 dark:prose-a:text-blue-400"
+              dangerouslySetInnerHTML={{ __html: post.contentHtml }}
+            />
+          )}
 
           <CommentSection postSlug={slug} supabaseEdgeFunctionUrl={edgeFunctionUrl} supabaseAnonKey={anonKey} />
         </article>
